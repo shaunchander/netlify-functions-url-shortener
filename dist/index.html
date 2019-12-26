@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Serverless URL Shortener</title>
+		<link
+			href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/f5cf204a12.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body class="bg-gray-200 text-gray-700 h-screen">
+		<section
+			class="container mx-auto mt-24 flex flex-col items-center justify-center"
+		>
+			<div>
+				<h1 class="text-4xl mb-4">Serverless URL Shortener</h1>
+				<p class="font-bold">
+					Built with Netlify Functions, MongoDB, and TailwindCSS.
+				</p>
+			</div>
+			<div class="mt-20 flex rounded-lg shadow-sm">
+				<form
+					action="http://localhost:8888/.netlify/functions/shorten-url"
+					method="POST"
+					class="flex"
+					id="urlShortenForm"
+				>
+					<input
+						type="text"
+						placeholder="Url to shorten..."
+						name="URL"
+						id="url"
+						class="px-2 py-3 rounded-l-lg focus:outline-none active:outline-none block"
+						style="width:450px;"
+					/>
+
+					<button
+						class="bg-blue-400 p-3 -ml-1 rounded-r-lg text-white active:outline-none"
+						type="submit"
+					>
+						<i class="fas fa-sign-in-alt"></i>
+					</button>
+				</form>
+			</div>
+			<p class="text-xs mt-3">
+				Make sure 'http(s)' is part of the URL or the shortener won't work!
+			</p>
+			<table class="table-auto mt-12" style="width: 750px">
+				<thead>
+					<tr class="text-left">
+						<th scope="col" class="px-4 py-2">URL</th>
+						<th scope="col" class="px-4 py-2">Hits</th>
+						<th scope="col" class="px-4 py-2">Shortened URL</th>
+						<th scope="col" class="px-4 py-2">Delete</th>
+					</tr>
+				</thead>
+				<tbody id="urlTable"></tbody>
+			</table>
+		</section>
+		<script src="main.js"></script>
+	</body>
+</html>

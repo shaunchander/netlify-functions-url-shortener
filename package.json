@@ -1,0 +1,26 @@
+{
+	"name": "netlify-serverless-url-shortener",
+	"version": "1.0.0",
+	"description": "A simple URL shortener built on Netlify Functions to test my ability with serverless functions.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"netlify",
+		"serverless",
+		"crud",
+		"url",
+		"shortener",
+		"example"
+	],
+	"author": "Shaun Chander",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^8.2.0"
+	},
+	"devDependencies": {
+		"mongoose": "^5.8.3",
+		"shortid": "^2.2.15"
+	}
+}

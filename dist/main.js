@@ -26,7 +26,7 @@ urlForm.addEventListener('submit', async e => {
 
 	try {
 		const result = await fetch(
-			'http://localhost:8888/.netlify/functions/shorten-url',
+			'https://netlify-functions-url-shortener.netlify.com/.netlify/functions/shorten-url',
 			{
 				method: 'POST',
 				body: JSON.stringify({ url }),
@@ -42,7 +42,7 @@ urlForm.addEventListener('submit', async e => {
 
 const getURLS = async () => {
 	let result = await fetch(
-		'http://localhost:8888/.netlify/functions/shorten-url'
+		'https://netlify-functions-url-shortener.netlify.com/.netlify/functions/shorten-url'
 	)
 	result = await result.json()
 
@@ -73,7 +73,7 @@ getURLS()
 
 const deleteURL = async urlID => {
 	const result = await fetch(
-		'http://localhost:8888/.netlify/functions/shorten-url',
+		'https://netlify-functions-url-shortener.netlify.com/.netlify/functions/shorten-url',
 		{
 			method: 'DELETE',
 			body: JSON.stringify({ urlID }),
